@@ -7,9 +7,9 @@ export default function Home() {
       <Head>
         <title>Udayan Maurya</title>
         <meta name="description" content="Udayan Maurya - Frontend Developer" />
-        <link rel="icon" href="U-black.png" />
+        <link rel="icon" href="favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link
           href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&family=Roboto&display=swap"
           rel="stylesheet"
@@ -45,7 +45,8 @@ export default function Home() {
               Front End Developer
             </h1>
             <p className="lg:text-2xl">
-              Helping organizations create expriences their users love!
+              Helping organizations create <strong>expriences</strong> their
+              users <strong>love!</strong>
             </p>
           </div>
         </div>
