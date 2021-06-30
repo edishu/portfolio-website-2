@@ -6,7 +6,13 @@ module.exports = {
       sans: ["Roboto", "ui-sans-serif", "system-ui"],
       kumbh: ["Kumbh Sans", "ui-sans-serif", "system-ui"]
     },
-    extend: {}
+    extend: {
+      backgroundImage: () => ({
+        "react-logo": "url('/react.png')",
+        "node-logo": "url('/node.png')",
+        "git-logo": "url('/git.png')"
+      })
+    }
   },
   variants: {
     extend: {}
