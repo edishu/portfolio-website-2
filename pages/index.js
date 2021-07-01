@@ -90,12 +90,32 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <footer className="py-12 bg-black text-white">
+      <footer className="pt-8 pb-12 bg-black text-white">
         <h2 className="text-2xl text-center mb-10">Get in Touch</h2>
         <div className="flex justify-center items-center max-w-screen-xl mx-auto px-8">
-          <FontAwesomeIcon icon={faGithub} className="mx-8 w-8" />
-          <FontAwesomeIcon icon={faLinkedin} className="mx-8 w-8" />
-          <FontAwesomeIcon icon={faEnvelope} className="mx-8 w-8" />
+          <a
+            href="https://github.com/edishu"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="mx-8 w-8 rounded-full hover:text-github outline-none focus:ring-2 ring-github ring-offset-8 ring-offset-black"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/udayanmaurya"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="mx-8 w-8 hover:text-linkedin outline-none focus:ring-2 ring-linkedin ring-offset-8 ring-offset-black"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+
+          <a
+            href="mailto:mauryaudayan@gmail.com"
+            className="mx-8 w-8 hover:text-gmail outline-none focus:ring-2 ring-gmail ring-offset-8 ring-offset-black"
+          >
+            <FontAwesomeIcon icon={faEnvelope} />
+          </a>
         </div>
       </footer>
     </div>

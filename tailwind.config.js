@@ -7,6 +7,11 @@ module.exports = {
       kumbh: ["Kumbh Sans", "ui-sans-serif", "system-ui"]
     },
     extend: {
+      colors: {
+        github: "#4078c0",
+        linkedin: "#00a0dc",
+        gmail: "#dd4b39"
+      },
       backgroundImage: () => ({
         "react-logo": "url('/react.png')",
         "node-logo": "url('/node.png')",
