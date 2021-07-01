@@ -1,5 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
@@ -89,13 +91,11 @@ export default function Home() {
         </div>
       </section>
       <footer className="py-12 bg-black text-white">
-      <h2 className="text-xl text-center mb-14">Get in Touch</h2>
+        <h2 className="text-2xl text-center mb-10">Get in Touch</h2>
         <div className="flex justify-center items-center max-w-screen-xl mx-auto px-8">
-          <div>
-            <span className="mx-4 font-medium">Github</span>
-            <span className="mx-4 font-medium">Linkedin</span>
-            <span className="mx-4 font-medium">Mail</span>
-          </div>
+          <FontAwesomeIcon icon={faGithub} className="mx-8 w-8" />
+          <FontAwesomeIcon icon={faLinkedin} className="mx-8 w-8" />
+          <FontAwesomeIcon icon={faEnvelope} className="mx-8 w-8" />
         </div>
       </footer>
     </div>
