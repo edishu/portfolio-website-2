@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -27,13 +28,13 @@ export default function Home() {
             <h1 className="text-5xl font-bold font-kumbh">udayanmaurya</h1>
           </div>
           <div>
-            <span className="mx-4 text-xl font-medium">Blog</span>
+            <span className="mx-4 text-xl font-medium">Blogs</span>
             <span className="mx-4 text-xl font-medium">Skills</span>
             <span className="mx-4 text-xl font-medium">Contact</span>
           </div>
         </div>
       </nav>
-      <section className="flex justify-center items-center py-40">
+      <section className="flex justify-center items-center pt-40 pb-32">
         <div>
           <div className="text-center">
             <h1 className="mb-4 text-5xl lg:text-6xl font-bold font-kumbh">
@@ -47,9 +48,19 @@ export default function Home() {
         </div>
       </section>
       <section className="max-w-screen-xl mx-auto py-10">
+        <h2 className="text-2xl text-center underline mb-10">Blogs</h2>
+        <div className="flex flex-col items-center max-h-96 overflow-auto">
+          <Blog
+            imgSrc="/abstract.jpg"
+            title="Frontend - Abstract End"
+            subTitle="Short Description"
+          />
+        </div>
+      </section>
+      <section className="max-w-screen-xl mx-auto py-10">
         <h2 className="text-2xl text-center underline">Skills</h2>
         <div className="flex justify-around items-center py-10">
-          <div className="border border-black border-solid rounded-xl py-8 px-12">
+          <div className="border border-black border-solid rounded-xl py-8 px-12 shadow-md">
             <div className="bg-react-logo bg-center bg-contain bg-no-repeat">
               <h3 className="text-xl font-semibold text-center py-4 bg-white bg-opacity-40">
                 Core
@@ -62,7 +73,7 @@ export default function Home() {
               <li className="my-2 text-center">HTML5 / CSS3 / SASS</li>
             </ul>
           </div>
-          <div className="border border-black border-solid rounded-xl py-8 px-11">
+          <div className="border border-black border-solid rounded-xl py-8 px-11 shadow-md">
             <div className="bg-node-logo bg-center bg-contain bg-no-repeat bg-opacity-100">
               <h3 className="text-xl font-semibold text-center py-4 bg-white bg-opacity-40">
                 Value Add
@@ -75,7 +86,7 @@ export default function Home() {
               <li className="my-2 text-center">Test Driven Development</li>
             </ul>
           </div>
-          <div className="border border-black border-solid rounded-xl py-8 px-11">
+          <div className="border border-black border-solid rounded-xl py-8 px-11 shadow-md">
             <div className="bg-git-logo bg-center bg-contain bg-no-repeat bg-opacity-100">
               <h3 className="text-xl font-semibold text-center py-4 bg-white bg-opacity-40">
                 Productivity
@@ -94,14 +105,6 @@ export default function Home() {
         <h2 className="text-2xl text-center mb-10">Get in Touch</h2>
         <div className="flex justify-center items-center max-w-screen-xl mx-auto px-8">
           <a
-            href="https://github.com/edishu"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="mx-8 w-8 rounded-full hover:text-github outline-none focus:ring-2 ring-github ring-offset-8 ring-offset-black"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-          <a
             href="https://www.linkedin.com/in/udayanmaurya"
             target="_blank"
             rel="noreferrer noopener"
@@ -109,15 +112,64 @@ export default function Home() {
           >
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
-
           <a
             href="mailto:mauryaudayan@gmail.com"
             className="mx-8 w-8 hover:text-gmail outline-none focus:ring-2 ring-gmail ring-offset-8 ring-offset-black"
           >
             <FontAwesomeIcon icon={faEnvelope} />
           </a>
+          <a
+            href="https://github.com/edishu"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="mx-8 w-8 rounded-full hover:text-github outline-none focus:ring-2 ring-github ring-offset-8 ring-offset-black"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
         </div>
       </footer>
     </div>
   );
 }
+
+const Blog = ({ imgSrc, title, subTitle }) => {
+  return (
+    <div
+      className="border border-black border-solid rounded-xl
+      w-9/12 px-10 py-8 mb-12 shadow-lg hover:shadow-2xl
+      flex"
+    >
+      <Image src={imgSrc} width={300} height={200} className="rounded-xl" />
+      <div className="p-10">
+        <a
+          href="https://dev.to/"
+          target="_blank"
+          className="text-3xl font-bold font-kumbh mb-4 outline-none 
+          focus:ring ring-black ring-offset-1 hover:underline"
+        >
+          {title}
+        </a>
+        <p className="text-gray-600 text-lg">{subTitle}</p>
+      </div>
+    </div>
+  );
+};
+
+const Skill = ({ title, logo, skillList }) => {
+  return (
+    <div className="border border-black border-solid rounded-xl py-8 px-12">
+      <div className={`${logo} bg-center bg-contain bg-no-repeat`}>
+        <h3 className="text-xl font-semibold text-center py-4 bg-white bg-opacity-40">
+          {title}
+        </h3>
+      </div>
+      <ul>
+        {skillList.map((el, idx) => (
+          <li key={idx} className="my-2 text-center">
+            {el}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
