@@ -52,8 +52,9 @@ export default function Home() {
         <div className="flex flex-col items-center max-h-96 overflow-auto">
           <Blog
             imgSrc="/abstract.jpg"
-            title="Frontend - Abstract End"
-            subTitle="Short Description"
+            title="Frontend Abstractions"
+            subTitle="Abstract thinking has helped us solve big problems with ease. Learn more about major abstraction in the world of Frontend Web Development."
+            linkTo="https://dev.to/udayanmaurya/frontend-abstractions-4pca"
           />
         </div>
       </section>
@@ -132,7 +133,7 @@ export default function Home() {
   );
 }
 
-const Blog = ({ imgSrc, title, subTitle }) => {
+const Blog = ({ imgSrc, title, subTitle, linkTo }) => {
   return (
     <div
       className="border border-black border-solid rounded-xl
@@ -142,14 +143,22 @@ const Blog = ({ imgSrc, title, subTitle }) => {
       <Image src={imgSrc} width={300} height={200} className="rounded-xl" />
       <div className="p-10">
         <a
-          href="https://dev.to/"
+          href={linkTo}
           target="_blank"
           className="text-3xl font-bold font-kumbh mb-4 outline-none 
           focus:ring ring-black ring-offset-1 hover:underline"
         >
           {title}
         </a>
-        <p className="text-gray-600 text-lg">{subTitle}</p>
+        <p className="text-gray-600 text-lg mb-2">{subTitle}</p>
+        <a
+          href={linkTo}
+          target="_blank"
+          className="mb-4 font-bold outline-none underline text-blue-700
+          focus:ring ring-blue-700 ring-offset-1 hover:text-indigo-700"
+        >
+          Read
+        </a>
       </div>
     </div>
   );
