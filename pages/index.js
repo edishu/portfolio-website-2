@@ -35,7 +35,7 @@ export default function Home() {
       });
     }
   }, [router]);
-  
+
   return (
     <div className="min-h-screen min-w-max">
       <Head>
@@ -57,18 +57,26 @@ export default function Home() {
         <div className="flex justify-between items-center max-w-screen-xl mx-auto px-8">
           <div>
             <Link href={{ hash: "" }}>
-              <a className="text-5xl font-bold font-kumbh">udayanmaurya</a>
+              <a className="text-5xl font-bold font-kumbh outline-none focus:ring ring-black ring-offset-4">
+                udayanmaurya
+              </a>
             </Link>
           </div>
           <div>
             <Link href={{ hash: "blog" }}>
-              <a className="mx-4 text-xl font-medium">Blogs</a>
+              <a className="mx-4 text-xl font-medium outline-none focus:ring ring-black ring-offset-4 hover:underline">
+                Blogs
+              </a>
             </Link>
             <Link href={{ hash: "skill" }}>
-              <a className="mx-4 text-xl font-medium">Skills</a>
+              <a className="mx-4 text-xl font-medium outline-none focus:ring ring-black ring-offset-4 hover:underline">
+                Skills
+              </a>
             </Link>
             <Link href={{ hash: "contact" }}>
-              <a className="mx-4 text-xl font-medium">Contact</a>
+              <a className="mx-4 text-xl font-medium outline-none focus:ring ring-black ring-offset-4 hover:underline">
+                Contact
+              </a>
             </Link>
           </div>
         </div>
