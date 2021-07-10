@@ -53,7 +53,7 @@ export default function Home() {
           <Blog
             imgSrc="/abstract.jpg"
             title="Frontend Abstractions"
-            subTitle="Abstract thinking has helped us solve big problems with ease. Learn more about major abstraction in the world of Frontend Web Development."
+            subTitle="3 major Frontend Development Abstraction, which help in writing bug free and clean code."
             linkTo="https://dev.to/udayanmaurya/frontend-abstractions-4pca"
           />
         </div>
@@ -140,25 +140,25 @@ const Blog = ({ imgSrc, title, subTitle, linkTo }) => {
       w-9/12 px-10 py-8 mb-12 shadow-lg hover:shadow-2xl
       flex"
     >
-      <Image src={imgSrc} width={300} height={200} className="rounded-xl" />
+      <div>
+        <Image
+          src={imgSrc}
+          width={300}
+          height={200}
+          layout="fixed"
+          className="rounded-xl"
+        />
+      </div>
       <div className="p-10">
-        <a
+        <h2
           href={linkTo}
           target="_blank"
           className="text-3xl font-bold font-kumbh mb-4 outline-none 
           focus:ring ring-black ring-offset-1 hover:underline"
         >
           {title}
-        </a>
+        </h2>
         <p className="text-gray-600 text-lg mb-2">{subTitle}</p>
-        <a
-          href={linkTo}
-          target="_blank"
-          className="mb-4 font-bold outline-none underline text-blue-700
-          focus:ring ring-blue-700 ring-offset-1 hover:text-indigo-700"
-        >
-          Read
-        </a>
       </div>
     </div>
   );
