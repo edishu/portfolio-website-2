@@ -20,7 +20,7 @@ module.exports = {
     }
   },
   variants: {
-    extend: {}
+    extend: { backgroundColor: ["active"], textDecoration: ["group-focus"] }
   },
   plugins: []
 };

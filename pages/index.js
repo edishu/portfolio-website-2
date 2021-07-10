@@ -49,7 +49,7 @@ export default function Home() {
       </section>
       <section className="max-w-screen-xl mx-auto py-10">
         <h2 className="text-2xl text-center underline mb-10">Blogs</h2>
-        <div className="flex flex-col items-center max-h-96 overflow-auto">
+        <div className="flex flex-col items-center">
           <Blog
             imgSrc="/abstract.jpg"
             title="Frontend Abstractions"
@@ -61,7 +61,7 @@ export default function Home() {
       <section className="max-w-screen-xl mx-auto py-10">
         <h2 className="text-2xl text-center underline">Skills</h2>
         <div className="flex justify-around items-center py-10">
-          <div className="border border-black border-solid rounded-xl py-8 px-12 shadow-md">
+          <div className="border border-black border-solid rounded-xl py-8 px-12">
             <div className="bg-react-logo bg-center bg-contain bg-no-repeat">
               <h3 className="text-xl font-semibold text-center py-4 bg-white bg-opacity-40">
                 Core
@@ -74,7 +74,7 @@ export default function Home() {
               <li className="my-2 text-center">HTML5 / CSS3 / SASS</li>
             </ul>
           </div>
-          <div className="border border-black border-solid rounded-xl py-8 px-11 shadow-md">
+          <div className="border border-black border-solid rounded-xl py-8 px-11">
             <div className="bg-node-logo bg-center bg-contain bg-no-repeat bg-opacity-100">
               <h3 className="text-xl font-semibold text-center py-4 bg-white bg-opacity-40">
                 Value Add
@@ -87,7 +87,7 @@ export default function Home() {
               <li className="my-2 text-center">Test Driven Development</li>
             </ul>
           </div>
-          <div className="border border-black border-solid rounded-xl py-8 px-11 shadow-md">
+          <div className="border border-black border-solid rounded-xl py-8 px-11">
             <div className="bg-git-logo bg-center bg-contain bg-no-repeat bg-opacity-100">
               <h3 className="text-xl font-semibold text-center py-4 bg-white bg-opacity-40">
                 Productivity
@@ -135,10 +135,13 @@ export default function Home() {
 
 const Blog = ({ imgSrc, title, subTitle, linkTo }) => {
   return (
-    <div
-      className="border border-black border-solid rounded-xl
-      w-9/12 px-10 py-8 mb-12 shadow-lg hover:shadow-2xl
-      flex"
+    <a
+      href={linkTo}
+      target="_blank"
+      className="w-9/12 px-10 py-8 mb-12 
+      border border-black border-solid rounded-xl  outline-none
+      cursor-pointer hover:shadow-2xl focus:ring-1 ring-offset-8 ring-black active:bg-gray-200 
+      group flex"
     >
       <div>
         <Image
@@ -151,16 +154,14 @@ const Blog = ({ imgSrc, title, subTitle, linkTo }) => {
       </div>
       <div className="p-10">
         <h2
-          href={linkTo}
-          target="_blank"
           className="text-3xl font-bold font-kumbh mb-4 outline-none 
-          focus:ring ring-black ring-offset-1 hover:underline"
+          focus:ring ring-black ring-offset-1 group-hover:underline group-focus:underline"
         >
           {title}
         </h2>
         <p className="text-gray-600 text-lg mb-2">{subTitle}</p>
       </div>
-    </div>
+    </a>
   );
 };
 
