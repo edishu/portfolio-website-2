@@ -1,10 +1,41 @@
+import { useEffect, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
+  const router = useRouter();
+  const blogRef = useRef(null);
+  const skillRef = useRef(null);
+  const contatRef = useRef(null);
+  useEffect(() => {
+    if (router.asPath.match(/#blog/)) {
+      window.scrollTo({
+        top: blogRef.current.offsetTop - 75,
+        behavior: "smooth"
+      });
+    } else if (router.asPath.match(/#skill/)) {
+      window.scrollTo({
+        top: skillRef.current.offsetTop - 75,
+        behavior: "smooth"
+      });
+    } else if (router.asPath.match(/#contact/)) {
+      window.scrollTo({
+        top: contatRef.current.offsetTop - 75,
+        behavior: "smooth"
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  }, [router]);
+  
   return (
     <div className="min-h-screen min-w-max">
       <Head>
@@ -22,15 +53,23 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <nav className="pt-8 pb-4 sticky top-0 z-50 bg-white">
+      <nav className="pt-8 pb-4 sticky top-0 z-50 bg-white border-b border-gray-200">
         <div className="flex justify-between items-center max-w-screen-xl mx-auto px-8">
           <div>
-            <h1 className="text-5xl font-bold font-kumbh">udayanmaurya</h1>
+            <Link href={{ hash: "" }}>
+              <a className="text-5xl font-bold font-kumbh">udayanmaurya</a>
+            </Link>
           </div>
           <div>
-            <span className="mx-4 text-xl font-medium">Blogs</span>
-            <span className="mx-4 text-xl font-medium">Skills</span>
-            <span className="mx-4 text-xl font-medium">Contact</span>
+            <Link href={{ hash: "blog" }}>
+              <a className="mx-4 text-xl font-medium">Blogs</a>
+            </Link>
+            <Link href={{ hash: "skill" }}>
+              <a className="mx-4 text-xl font-medium">Skills</a>
+            </Link>
+            <Link href={{ hash: "contact" }}>
+              <a className="mx-4 text-xl font-medium">Contact</a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -47,7 +86,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="max-w-screen-xl mx-auto py-10">
+      <section ref={blogRef} className="max-w-screen-xl mx-auto py-10">
         <h2 className="text-2xl text-center underline mb-10">Blogs</h2>
         <div className="flex flex-col items-center">
           <Blog
@@ -58,7 +97,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="max-w-screen-xl mx-auto py-10">
+      <section ref={skillRef} className="max-w-screen-xl mx-auto py-10">
         <h2 className="text-2xl text-center underline">Skills</h2>
         <div className="flex justify-around items-center py-10">
           <div className="border border-black border-solid rounded-xl py-8 px-12">
@@ -102,7 +141,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <footer className="pt-8 pb-12 bg-black text-white">
+      <footer ref={contatRef} className="pt-32 pb-20 bg-black text-white">
         <h2 className="text-2xl text-center mb-10">Get in Touch</h2>
         <div className="flex justify-center items-center max-w-screen-xl mx-auto px-8">
           <a
@@ -140,7 +179,7 @@ const Blog = ({ imgSrc, title, subTitle, linkTo }) => {
       target="_blank"
       className="w-9/12 px-10 py-8 mb-12 
       border border-black border-solid rounded-xl  outline-none
-      cursor-pointer hover:shadow-2xl focus:ring-1 ring-offset-8 ring-black active:bg-gray-200 
+      cursor-pointer hover:shadow-2xl focus:ring-1 ring-offset-8 ring-black active:bg-gray-200 transition-shadow duration-500
       group flex"
     >
       <div>
