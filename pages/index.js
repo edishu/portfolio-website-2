@@ -100,7 +100,7 @@ export default function Home() {
           <Blog
             imgSrc="/abstract.jpg"
             title="Frontend Abstractions"
-            subTitle="3 major Frontend Development Abstraction, which help in writing bug free and clean code."
+            subTitle="3 major Frontend Development Abstractions, which help in writing bug free and maintainable code."
             linkTo="https://dev.to/udayanmaurya/frontend-abstractions-4pca"
           />
         </div>
