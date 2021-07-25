@@ -100,8 +100,14 @@ export default function Home() {
           <Blog
             imgSrc="/abstract.jpg"
             title="Frontend Abstractions"
-            subTitle="3 major Frontend Development Abstractions, which help in writing bug free and maintainable code."
+            subTitle="Major Frontend Development Abstractions, which help in writing bug free and maintainable code."
             linkTo="https://dev.to/udayanmaurya/frontend-abstractions-4pca"
+          />
+          <Blog
+            imgSrc="/eventRedux.jpg"
+            title="Event Driven Architecture for Redux"
+            subTitle="Improve maintainability and scalability of Redux stores by deriving actions based on application events."
+            linkTo="https://dev.to/udayanmaurya/event-driven-architecture-for-redux-53ak"
           />
         </div>
       </section>
