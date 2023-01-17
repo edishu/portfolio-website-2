@@ -85,10 +85,10 @@ export default function Home() {
         <div>
           <div className="text-center">
             <h1 className="mb-4 text-5xl lg:text-6xl font-bold font-kumbh">
-              Front End Developer
+              Full-stack Developer
             </h1>
             <p className="text-xl lg:text-2xl">
-              Helping organizations create <strong>expriences</strong> their
+              Helping organizations create <strong>applications</strong> their
               users <strong>love!</strong>
             </p>
           </div>
