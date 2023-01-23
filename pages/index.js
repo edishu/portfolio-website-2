@@ -106,7 +106,12 @@ export default function Home() {
           <Blog
             imgSrc="/boxing.jpg"
             title="TypeScript: type vs interface"
-            subTitle="Find conclusive answer to type vs interface conundrum. Spoiler: It's called 'TypeScript' not 'InterfaceScript'."
+            subTitle={
+              <>
+                Find conclusive answer to type vs interface conundrum. Spoiler:
+                <em>It's called 'TypeScript' not 'InterfaceScript' </em>😉
+              </>
+            }
             linkTo="https://dev.to/udayanmaurya/type-vs-interface-45o7"
           />
           <Blog
