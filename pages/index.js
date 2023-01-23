@@ -104,6 +104,12 @@ export default function Home() {
             linkTo="https://dev.to/udayanmaurya/frontend-abstractions-4pca"
           />
           <Blog
+            imgSrc="/boxing.jpg"
+            title="TypeScript: type vs interface"
+            subTitle="Find conclusive answer to type vs interface conundrum. Spoiler: It's called 'TypeScript' not 'InterfaceScript'."
+            linkTo="https://dev.to/udayanmaurya/type-vs-interface-45o7"
+          />
+          <Blog
             imgSrc="/eventRedux.jpg"
             title="Event Driven Architecture for Redux"
             subTitle="Improve maintainability and scalability of Redux stores by deriving actions based on application events."
